@@ -22,14 +22,12 @@ class FormComponent extends Component {
 
       if (response.ok) {
         console.log('Data saved successfully');
-        // Optionally, clear the form fields or show a success message
+        this.setState({ formData: '' });
       } else {
         console.error('Failed to save data:', response.statusText);
-        // Handle error case
       }
     } catch (error) {
       console.error('Error saving data:', error);
-      // Handle error case
     }
   };
 

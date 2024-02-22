@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
@@ -37,7 +37,7 @@ app.post('/api/saveUserData', (req, res) => {
       users.push(userData);
   
       // Write updated user data back to the file
-      fs.writeFile('users.json', JSON.stringify(users, null, 2), (writeErr) => {
+      fs.writeFile('./json/users.json', JSON.stringify(users, null, 2), (writeErr) => {
         if (writeErr) {
           console.error('Error writing file:', writeErr);
           res.status(500).json({ error: 'Internal Server Error' });
