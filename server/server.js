@@ -29,7 +29,7 @@ app.post('/api/saveUserData', (req, res) => {
         } catch (parseError) {
           console.error('Error parsing JSON:', parseError);
           res.status(500).json({ error: 'Internal Server Error' });
-          return;
+          return;2
         }
       }
   
